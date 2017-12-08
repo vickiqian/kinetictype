@@ -1,0 +1,373 @@
+<html>
+  <head>
+    <meta charset="utf=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Hints</title>
+     <style>
+       container{
+        margin: auto;
+        display:grid;
+        grid-template-columns: 2vw repeat(6, 1fr) 2vw;
+        grid-template-rows: 15vh 1fr 40vh 5vh repeat(5, 36vw);
+        grid-gap: 15vh;
+        width: 100vw;
+       }
+       
+       .section p{
+         font-family: 'Roboto Mono', monospace;
+         font-size: 110%;
+         line-height: 4vh;
+         margin: 2.5vw;
+       }
+       .section .title{
+         font-family: 'Krona One', sans-serif;
+         font-size: 150%;
+       }
+       .section li{
+         font-family: 'Roboto Mono', monospace;
+         font-size: 110%;
+         font-weight: 700;
+         line-height: 4vh;
+         margin: 2.5vw;
+       }
+       .box{
+         height: 30vh;
+         border: solid black 1vh;
+         margin-top: 2vw;
+       }
+       .box p{
+         font-family: 'Roboto Mono', monospace;
+         font-weight: 700;
+         font-size: 2vw;
+         text-align: center;
+         align-items: center;
+         display:block;
+         line-height: 20vh;
+         color: yellow;
+       }
+       .c1 p{
+         animation: flip 2s linear infinite;
+       }
+       .c2:hover{
+         border: solid yellow 1vh;
+         background-color: rgb(46,90,154);
+       }
+       .c2:hover p{
+         animation: skew 2s linear infinite;
+       }
+       .c3 p{
+         animation: tracking 3s ease-in infinite 1s, opacity 3s ease-in infinite 1s;
+       }
+       .part1{
+         grid-column: 3/span 4;
+         grid-row: 2;
+       }
+       .part2{
+         grid-column: 3/span 4;
+         grid-row: 3;
+       }
+       .part3{
+         grid-column: 3/span 4;
+         grid-row: 4;
+       }
+       .part4{
+         grid-column: 3/span 4;
+         grid-row: 5; 
+       }
+       @keyframes flip{
+        0% {transform: rotateY(0deg);}
+        50% {transform: rotateY(180deg);}
+        100% {transform: rotateY(360deg);}
+      }
+        @keyframes skew {
+        0% {transform: skewY(20deg);}
+        50% {transform: skewY(-20deg);}
+        100% {transform: skewY(20deg);}
+      }
+       @keyframes tracking{
+        0% {letter-spacing: 0rem;} 
+        50% {letter-spacing: .25vw;}
+        100% {letter-spacing: 0rem;} 
+       }
+       @keyframes opacity{
+        0% {opacity: 1;}
+        50% {opacity: 0;}
+        100% {opacity: 1;}
+       }
+       a{
+         text-decoration: none;
+         color: yellow;
+       }
+       .sqr:hover{
+         border: solid yellow 1vh;
+         background-color: rgb(46,90,154);
+       }
+       .sqr:hover p{
+         color: yellow;
+       }
+       .sqr{
+         height: 36vw;
+         border: solid black 1vh;
+         margin-left: 2vw;
+         margin-right: 2vw;
+         margin-bottom: 15vh;
+       }
+       .sqr p{
+         font-family: 'Roboto Mono', monospace;
+         font-weight: 700;
+         font-size: 2vw;
+         text-align: center;
+         align-items: center;
+         display:block;
+         line-height: 30vw;
+         color: black;
+       }
+       .sqr .pic{
+        opacity:0;
+        width: 50%;
+        display: flex;
+        position: relative;
+       }
+       .sqr:hover .pic{
+         opacity:0.7;
+        transition: opacity .5s ease-out .3s;
+       }
+       @keyframes bounceIn {
+          0% {
+            transform: scale(0.1);
+            opacity: 0;
+          }
+          60% {
+            transform: scale(1.3);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+       .a:hover p{
+         animation: bounceIn 2s ease-in-out infinite;
+       }
+       .pic-a{
+         top: -25.5vw;
+         left: -25.5vw;
+       }
+
+       @keyframes textshadow{
+         0% {text-shadow: 0 0 0px 0px yellow;}
+        50% {text-shadow: 8px 8px 8px black;}
+        100% {text-shadow: 0 0 0px 0px yellow;}
+       }
+       @keyframes skewx{
+         0% {transform: skewX(30deg);}
+        50% {transform: skewX(-30deg);}
+        100% {transform: skewX(30deg);}
+       }
+       
+       .b:hover p{
+         animation: textshadow 1s ease-in-out infinite, skewx 1s ease-in-out infinite;
+       }
+       .pic-b{
+         top: -25.5vw;
+         right: -45vw;
+       }
+       @keyframes wave{
+          0% {transform: translate(0,-10vw);
+              letter-spacing: .2rem; }
+          25% {transform: translate(0,5vw);
+               letter-spacing: .6vw;}
+          50% {transform: translate(0,10vw);
+               letter-spacing: .2rem;}
+          75% {transform: translate(0,-5vw);
+               letter-spacing: .6vw;} 
+          100% {transform: translate(0,-10vw);
+                letter-spacing: .2rem;}
+         }
+       .c:hover p{
+         animation: wave 1.5s ease-out infinite;
+       }
+       .pic-c{
+         top: -25.5vw;
+         left: -25.5vw;
+       }
+       .pic-d{
+         top: -30vw;
+         right: -38vw;
+       }
+       @keyframes fall{
+         0% {transform: rotateX(0deg);
+             font-weight: 200;
+             }
+         50%{transform: rotateX(90deg);
+             font-weight: 700;
+         }
+         75%{transform: rotateX(0deg);
+             font-weight: 700;
+         }
+         100% {transform: rotateX(90deg);
+               font-weight: 200;
+             }
+       }
+       .d:hover p{
+         animation: fall 2s linear infinite;
+       }
+       
+       @media screen and (max-width: 600px) {
+        container{
+          grid-template-columns: 5px repeat(6, 1fr) 5px;
+          grid-template-rows: 15vh 1fr 40vh 5vh repeat(5, 36vw);
+          grid-gap: 1vh;
+         }
+         .section p{
+           font-family: 'Roboto Mono', monospace;
+           font-size: 90%;
+           line-height: 3.2vh;
+           left: -90px;
+           width: 80vw;
+           margin-left: -10vw;
+       }
+         .section .title{
+           font-family: 'Krona One', sans-serif;
+           font-size: 110%;
+           margin-left: -10vw;
+           margin-top: 10vh;
+       }
+       .section li{
+         font-family: 'Roboto Mono', monospace;
+         font-size: 100%;
+         font-weight: 500;
+         line-height: 4vh;
+         margin-left: -10vw;
+         margin-top: 5vh;
+       }
+         .sqr{
+         height: 50vw;
+         width:120%;
+         border: solid black 1vh;
+         margin-left: -10vw;
+         margin-top: 15vh;
+       }
+         .box p{
+         font-family: 'Roboto Mono', monospace;
+         font-weight: 700;
+         font-size: 90%;
+         text-align: center;
+         align-items: center;
+         display:block;
+         line-height: 26vh;
+         width: 130%;
+         color: yellow;
+       }
+          .sqr p{
+           font-family: 'Roboto Mono', monospace;
+           font-weight: 700;
+           font-size: 90%;;
+           text-align: center;
+           align-items: center;
+           display:block;
+           line-height: 45vw;
+           color: black;
+           width: 130%;
+        
+       }
+         .pic-a, .pic-b, .pic-d, .pic-c{
+         top: -13vw;
+         left: -8.5vw;
+       }
+         
+         .sqr:active{
+         border: solid yellow 1vh;
+         background-color: rgb(46,90,154);
+       }
+       .sqr:active p{
+         color: yellow;
+       }
+       .sqr:active .pic{
+               opacity:0.7;
+              transition: opacity .5s ease-out .3s;
+             }
+       .a:active p{
+               animation: bounceIn 2s ease-in-out infinite;
+             }
+       .b:active p{
+               animation: textshadow 1s ease-in-out infinite, skewx 1s ease-in-out infinite;
+             }
+       .c:active p{
+               animation: wave 1.5s ease-out infinite;
+             }
+       .d:active p{
+               animation: fall 2s linear infinite;
+             }
+       .c2:active{
+         border: solid yellow 1vh;
+         background-color: rgb(46,90,154);
+       }
+       .c2:active p{
+         animation: skew 2s linear infinite;
+       }
+       }
+     </style>
+      
+  </head>
+  <body>
+    <container>
+      <header> 
+          <a class="link1" href="index.html">TUTORIALS</a>
+          <a class="link" href="inspiration.html">INSPIRATIONS</a>
+          <a class="link" href="about.html">ABOUT</a>
+      </header>
+      <div class="section part1">
+        <div class="title">1. Keep in mind</div>
+        <p>Kinetic typography is a fun tool for your kit, but it is not an easy solution to the I-don’t-have-any-art-so-now-what problem. It should be used – like any other tool – for a specific purpose and with a certain goal in mind.
+        </p>
+        <ul>
+          <li>Condition 1: Capturing attention
+            <div class="box c1"><p>Notice me?</p></div>
+          </li>
+          
+          <li>Condition 2: Creating interaction
+            <div class="box c2"><p>Hover on me!</p></div>
+          </li>
+          <li>Condition 3: Creating characters
+            <div class="box c3"><p>Something is disappearing!</p></div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="section part2">
+        <div class="title">2. Know the basics</div>
+        <p>Keyframes - define the stages and styles of the animation.</p>
+        <p>Animation Properties - assign the @keyframes to a specific CSS element and define how it is animated.</p>
+        <p><a href="about.html">View more in "About"</a></p>
+      </div>
+      <div class="section part3">
+        <div class="title">3. Advanced application</div>
+        <p>Let us combine animations together!</p>
+      </div>
+      <div class="section part4">
+        <div class="sqr a">
+          <p>BounceIn=Transform+Opacity</p>
+          <img class="pic pic-a" src="bouncein.png" alt="bouncein">
+        </div>
+        <div class="sqr b">
+          <p>Swing=SkewX+TextShadow</p>
+          <img class="pic pic-b" src="swing.png" alt="swing">
+        </div>
+        <div class="sqr c">
+          <p>Wave=Position+Tracking</p>
+          <img class="pic pic-c" src="wave.png" alt="wave">
+        </div>
+        <div class="sqr d">
+          <p>Fall=RotateX+FontWeight</p>
+          <img class="pic pic-d" src="fall.png" alt="fall">
+        </div>
+        
+        
+      </div>
+    </container>
+  </body>   

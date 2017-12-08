@@ -1,0 +1,371 @@
+<html>
+  <head>
+    <meta charset="utf=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Kinetic Type Tutorials</title>
+    <style>
+      .link1{
+        color:yellow;
+      }
+      container{
+        margin: auto;
+        display:grid;
+        grid-template-columns: 2vw repeat(2, 1fr) 2vw;
+        grid-template-rows: 15vh repeat(6, 36vw);
+        grid-gap: 15vh;
+        width: 100vw;
+      }
+      .hint{
+        font-family: 'Overpass', monospace;
+        
+        background-color: yellow;
+        color: rgb(46,90,154);
+        animation: opacity 2s linear infinite;
+        position: fixed;
+        top: 25vh;
+        right: 3vw;
+        font-weight: 700;
+        transform: rotate(30deg);
+        font-size: 300%;
+        text-decoration: none;
+        letter-spacing: 1rem;
+        z-index: 10;
+        text-shadow: 2px 0px 4px yellow;
+      }
+      a{
+        text-decoration: none;
+        color: rgb(46,90,154);
+      }
+      .box{
+        height: 100%;
+        width: 100%;
+        border: solid black 1vh;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 700;
+        font-size: 3.2vw;
+        text-align: center;
+        align-items: center;
+        color: black;
+      }
+      .box-text{
+        line-height: 36vw;
+        display: block;
+      }
+      .box:hover{
+       border: solid yellow 1vh;
+       color: yellow;
+        background-color: rgb(46,90,154);
+      }
+      .box:hover .image{
+        opacity:0.7;
+        transition: opacity .5s ease-out .3s;
+      }
+      @keyframes rotate{
+        0% {transform: rotate(0);}
+        100% {transform: rotate(720deg);}
+      }
+      .a{
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .image{
+        opacity:0;
+        width: 50%;
+        display: flex;
+        position: relative;
+      }
+      .img-a{
+        left: -8vw;
+        top: -18vw;
+      }
+      
+      .a:hover .box-text{
+      animation: rotate 2s ease-in-out infinite;
+      }
+      @keyframes transform{
+        0% {transform: scale(1);}
+        50% {transform: scale(2);}
+        100% {transform: scale(1);}
+      }
+      .b{
+        grid-column: 3;
+        grid-row: 2;
+      }
+      .b:hover .box-text{
+        animation: transform 2s ease-in-out infinite;
+      }
+      .img-b{
+        left: 25vw;
+        top: -33vw;
+      }
+      .c{
+        grid-column: 2;
+        grid-row: 3;
+      }
+      @keyframes opacity{
+        0% {opacity: 1;}
+        50% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+      .c:hover .box-text{
+        animation: opacity .5s ease-in infinite;
+      }
+      .img-c{
+        left: -5vw;
+        top: -12vw;
+      }
+      @keyframes position{
+        0% {transform: translate(0,0);}
+        25% {transform: translate(0,-10vw);}
+        75% {transform: translate(0,10vw);}
+        100% {transform: translate(0,0);}
+      }
+      .d{
+        grid-column: 3;
+        grid-row: 3;
+      }
+      .d:hover .box-text{
+        animation: position 1.5s linear infinite;
+      }
+      .img-d{
+        left: -13vw;
+        top: -23vw;
+      }
+      @keyframes skew {
+        0% {transform: skewY(20deg);}
+        50% {transform: skewY(-20deg);}
+        100% {transform: skewY(20deg);}
+      }
+      .e{
+        grid-column: 2;
+        grid-row: 4;
+      }
+      .e:hover .box-text{
+        animation: skew 2s linear infinite;
+      }
+      .img-e{
+        left:27vw;
+        top:-34vw;
+      }
+      @keyframes tracking{
+        0% {letter-spacing: .2rem;} 
+        50% {letter-spacing: 2vw;}
+        100% {letter-spacing: .2rem;} 
+      }
+      .f{
+        grid-column: 3;
+        grid-row: 4;
+        letter-spacing: inherit;
+      }
+      .f:hover .box-text{
+        animation: tracking 2s ease-in infinite;
+      }
+      .img-f{
+        left: 27vw;
+        top: -35vw;
+      }
+      @keyframes flip{
+        0% {transform: rotateY(0deg);}
+        50% {transform: rotateY(180deg);}
+        100% {transform: rotateY(360deg);}
+      }
+      .g{
+        grid-column: 2;
+        grid-row: 5;
+        direction: ltr;
+      }
+      .g:hover .box-text{
+        animation: flip 1s ease-in infinite;
+      }
+      .img-g{
+        left:-8vw;
+        top:-16vw;
+      }
+      @keyframes slide{
+        0% {width: 70%; margin-left: 50%;}
+        50% {width: 100%; margin-left: -36%;}
+        100% {width: 70%; margin-left: 50%;}
+      }
+      .h:hover .box-text{
+        animation: slide 1s ease-in-out infinite;
+      }
+      .h{
+        grid-column: 3;
+        grid-row: 5;
+      }
+      .img-h{
+        left: -10vw;
+        top: -31vw;
+      }
+      @keyframes weight{
+        0% {font-weight: 800;}
+        50% {font-weight: 100;}
+        100% {font-weight: 800;}
+      }
+      .i:hover .box-text{
+        animation: weight 1s ease-in-out infinite;
+      }
+      .i{
+        grid-column: 2;
+        grid-row: 6;
+      }
+      .img-i{
+        left: 30vw;
+        top: -32vw;
+      }
+      @keyframes style{
+        0% {font-family:  'Roboto Mono', monospace;}
+        50% {font-family: 'Amatic SC', cursive;}
+        0% {font-family:  'Roboto Mono', monospace;}
+      }
+      .j:hover .box-text{
+        animation: style 2s linear infinite;
+      }
+      .j{
+        grid-column: 3;
+        grid-row: 6;
+      }
+      .img-j{
+        left: 26vw;
+        top: -22vw;
+      }
+      
+      @media screen and (max-width: 600px) {
+        container{
+          margin: auto;
+          display:grid;
+          grid-template-columns: 20px 1fr 20px;
+          grid-template-rows: 30vh repeat(10, 36vw);
+          grid-gap: 5vh;
+          width: 100vw;
+      }
+        .hint{
+          top:  26vh;
+          font-size: 200%;
+      }
+        .box{
+          font-weight: 700;
+          font-size: 30px;
+        }
+        .b{
+        grid-column: 2;
+        grid-row: 7;
+      }
+        .d{
+        grid-column: 2;
+        grid-row: 8;
+      }
+        .f{
+          grid-column: 2;
+        grid-row: 9;
+        }
+        .h{
+        grid-column: 2;
+        grid-row: 10;
+      }
+        .j{
+          grid-column: 2;
+        grid-row: 11;
+        }
+        .img-a, .img-b, .img-c, .img-d,.img-e, .img-f, .img-g, .img-h,.img-i, .img-j{
+        left: -15vw;
+        top: -15vw;
+      }
+        .box:active{
+       border: solid yellow 1vh;
+       color: yellow;
+        background-color: rgb(46,90,154);
+      }
+      .box:active .image{
+        opacity:0.7;
+        transition: opacity .5s ease-out .3s;
+      }
+         .a:active .box-text{
+      animation: rotate 2s ease-in-out infinite;
+      }
+        .b:active .box-text{
+                animation: transform 2s ease-in-out infinite;
+              }
+        .c:active .box-text{
+                animation: opacity .5s ease-in infinite;
+              }
+
+        .d:active .box-text{
+                animation: position 1.5s linear infinite;
+              }
+        .e:active .box-text{
+                animation: skew 2s linear infinite;
+              }
+        .f:active .box-text{
+                animation: tracking 2s ease-in infinite;
+              }
+        .g:active .box-text{
+                animation: flip 1s ease-in infinite;
+              }
+        .h:active .box-text{
+                animation: slide 1s ease-in-out infinite;
+              }
+        .i:active .box-text{
+                animation: weight 1s ease-in-out infinite;
+              }
+        .j:active .box-text{
+                animation: style 2s linear infinite;
+              }
+      }
+    </style>
+      
+  </head>
+  <body>
+    <container>
+      <header> 
+          <a class="link1" href="index.html">TUTORIALS</a>
+          <a class="link" href="inspiration.html">INSPIRATIONS</a>
+          <a class="link" href="about.html">ABOUT</a>
+      </header>
+      <div class="hint"><a href="hint.html">hints</a></div>
+      <div class="box a">
+        <div class="box-text">ROTATE</div>
+        <img class="image img-a" src="rotate.png" alt="rotate">
+      </div>
+      <div class="box b">
+        <div class="box-text">TRANSFORM</div>
+        <img class="image img-b" src="transform.png" alt="transform">
+      </div>
+      <div class="box c">
+        <div class="box-text">OPACITY</div>
+        <img class="image img-c" src="opacity.png" alt="opacity">
+      </div>
+      <div class="box d">
+        <div class="box-text">POSITION</div><img class="image img-d" src="position.png" alt="position">
+      </div>
+      <div class="box e">
+        <div class="box-text">SKEW</div>
+        <img class="image img-e" src="skew.png" alt="skew">
+      </div>
+      <div class="box f">
+        <div class="box-text">TRACKING</div>
+        <img class="image img-f" src="tracking.png" alt="tracking">
+      </div>
+      <div class="box g">
+        <div class="box-text">FLIP</div>
+        <img class="image img-g" src="flip.png" alt="flip">
+      </div>
+      <div class="box h">
+        <div class="box-text">SLIDE</div>
+      <img class="image img-h" src="slide.png" alt="slide"></div><div class="box i">
+        <div class="box-text">WEIGHT</div>
+      <img class="image img-i" src="weight.png" alt="weight"></div><div class="box j">
+        <div class="box-text">STYLE</div>
+      <img class="image img-j" src="style.png" alt="style"></div>
+      
+    </container>
+    
+
+
+  </body>
+</html>

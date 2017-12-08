@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <meta charset="utf=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>About Kinetic Type</title>
+    
+    <style>
+      html{
+        background-color: rgb(17,5,14);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/9f790f57312303.59d13cb933319.gif);
+      }
+
+      header a{
+        color: darkgray;
+}
+      header{
+         border-bottom: solid darkgray 1vh;
+
+      }
+      .link1{
+        color:yellow;
+      }
+      .box{
+        overflow: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 10vh auto;
+        position: absolute;
+        top: 25vh;
+        left: 10vw;
+        width: 80vw;
+        height: 68vh;
+        
+      }
+      ul{
+        width: 20vw;
+        font-family: 'Krona One', sans-serif;
+        font-size: 150%;
+        color: darkgray;
+        line-height: 8vh;
+        position: fixed;
+        grid-column: 1;
+        z-index: 999;
+      }
+      li a{
+        text-decoration: none;
+        color: darkgray;
+        
+      }
+      li a:visited{
+        text-decoration: none;
+        color: darkgray;
+      }
+      li a:active{
+        text-decoration: none;
+        color: yellow;
+      }
+      p{
+        line-height: 4vh;
+        width: 40vw;
+        font-weight: 200;
+        font-family: 'Roboto Mono', monospace;
+        color: darkgray;
+        font-size: 110%;
+        grid-column: 2;
+        position: relative;
+        margin-bottom: 4vh;
+        color: white;
+      }
+      article{
+        grid-column: 2;
+        grid-row: 1;
+ 
+        
+      }
+      section{
+        margin-bottom: 20vh;
+        background-color: rgba(17,5,14,.7);
+      }
+      .name{
+        font-weight: 700;
+        color: yellow;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        grid-column: 2;
+      }
+      
+      @media screen and (max-width: 600px) {
+        html{
+          background-image: none;
+          background-color: rgb(17,5,14);
+        }
+       
+        .box{
+        
+          overflow-x: hidden;
+          width: 100vw;
+          left: -10vw;
+          font-size: 14px;
+          top: 30vh;
+        
+      }
+      
+      ul{
+        top: 20vh;
+        width: 100vw;
+        font-family: 'Krona One', sans-serif;
+        font-size: 120%;
+        text-align: center;
+        line-height: 5vh;
+        padding-top: 1.5vh;
+        position: fixed;
+   
+        margin-bottom: 5vh; 
+        left: 2vw;
+        margin-left: -2vw;
+        z-index: 999;
+      }
+        .nav{
+          float: left;
+          display: inline;
+          height: 20px;
+          
+          margin-left: 10vw;
+          
+        }
+        
+
+        p{
+         margin-bottom: 2.5vh;
+          width: 80vw;
+        }
+        
+      }
+      
+    </style>
+      
+  </head>
+  <body>
+    <container>
+      <header>
+          <a class="link" href="index.html">TUTORIALS</a>
+          <a class="link" href="inspiration.html">INSPIRATIONS</a>
+          <a class="link1" href="about.html">ABOUT</a>
+      </header>
+      <div class="box">
+        <ul>
+          <li class="nav"><a href="#kinetictype">KINETIC TYPE</a></li>
+          <li class="nav"><a href="#css">CSS</a></li>
+          <li class="nav"><a href="#usage">USAGE</a></li>
+        </ul>
+        <article>
+        <section>
+        <p class="name" id="kinetictype">What is kinetic type?</p>
+        <p>Kinetic typography puts this together with some simple animations to create words that move on the screen, grabbing your attention and engaging the senses.
+        Kinetic typography refers to the creation of moving type.</p>
+        
+        <p> It is an animation technique that is used to make lettering expand, shrink, fly, move in slow motion, grow and change in numerous ways for the user. The effect can be simple and short with only small changes or quite elaborate and lengthy.</p>
+        
+        <p>Kinetic typography use has almost exploded recently because of more use of the technique in web design. Once something that was only used in video and television, kinetic typography is gaining popularity as a background effect on websites and in web-based videos. </p>
+        </section>
+        <section>
+        <p class="name" id="css">In CSS?</p>
+        <p>CSS animations are made up of two basic building blocks.</p>
+        <p><strong>1. Keyframes - define the stages and styles of the animation.</strong></p>
+        <p>Keyframes are the foundation of CSS animations. They define what the animation looks like at each stage of the animation timeline. Each @keyframes is composed of:
+        <p><strong>Name of the animation:</strong> A name that describes the animation, for example, bounceIn.</p>
+          <p><strong>Stages of the animation:</strong> Each stage of the animation is represented as a percentage. 0% represents the beginning state of the animation. 100% represents the ending state of the animation. Multiple intermediate states can be added in between.</p>
+        <p><strong>CSS Properties:</strong> The CSS properties defined for each stage of the animation timeline.</p>
+        <p><strong>2. Animation Properties - assign the @keyframes to a specific CSS element and define how it is animated.</strong></p>
+        <p>Once the @keyframes are defined, the animation properties must be added in order for your animation to function.</p>
+        <p>Animation properties do two things:</p>
+          <p><strong>They assign the @keyframes to the elements that you want to animate.</strong></p>
+        <p><strong>They define how it is animated.</strong></p>
+        <p>The animation properties are added to the CSS selectors (or elements) that you want to animate. You must add the following two animation properties for the animation to take effect:</p>
+        <p><strong>animation-name:</strong> The name of the animation, defined in the @keyframes.</p>
+        <p><strong>animation-duration: </strong>The duration of the animation, in seconds (e.g., 5s) or milliseconds (e.g., 200ms).</p>
+        </section>
+        <section>
+        <p class="name" id="usage">How to use?</p>
+        <p>When planning for kinetic typography, there are some common patterns of movement and behavior.</p>
+        <p>1. Slow motion or fast motion</p>
+        <p>2. Stretching or shrinking</p>
+        <p>3. Movement in arcs or waves as text moves along curved paths</p>
+        <p>4. Anticipated action, such a subtle movement before a sharp one</p>
+        <p>5. Follow through actions that happen after something else has happened</p>
+        <p>6. Secondary action when text moves because of something that happens to another element in the frame</p>
+        </section>
+        </article>
+      </div>
+      
+    </container>
+    
+   
+  </body>
+</html>
